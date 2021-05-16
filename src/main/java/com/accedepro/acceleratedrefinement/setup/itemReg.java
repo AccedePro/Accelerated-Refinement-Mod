@@ -17,6 +17,7 @@ public class itemReg {
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
 
+        modBlocks.registerStuff();
         modItems.registerStuff();
     }
 }
