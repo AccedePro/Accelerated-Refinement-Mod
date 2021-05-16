@@ -1,6 +1,7 @@
 package com.accedepro.acceleratedrefinement.data;
 
 import com.accedepro.acceleratedrefinement.acceleratedRefinement;
+import com.accedepro.acceleratedrefinement.data.client.modBlockStateProvider;
 import com.accedepro.acceleratedrefinement.data.client.modTextureProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -17,6 +18,7 @@ public class dataLoader {
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
 
         generator.addProvider(new modTextureProvider(generator, event.getExistingFileHelper()));
+        generator.addProvider(new modBlockStateProvider(generator, event.getExistingFileHelper()));
     }
 
 }

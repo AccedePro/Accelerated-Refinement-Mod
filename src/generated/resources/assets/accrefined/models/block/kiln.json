@@ -1,0 +1,9 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "blocks/kiln_top",
+    "front": "blocks/kiln_front",
+    "side": "blocks/kiln_side",
+    "bottom": "blocks/kiln"
+  }
+}

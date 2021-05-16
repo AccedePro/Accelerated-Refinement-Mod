@@ -9,13 +9,15 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class modTextureProvider extends ItemModelProvider {
 
+    //https://shadowfacts.net/tutorials/forge-modding-1102/
+
     public modTextureProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, acceleratedRefinement.MOD_ID, existingFileHelper);
     }
 
     @Override
     protected void registerModels() {
-        //withExistingParent("kiln", modLoc("block/kiln"));
+        withExistingParent("kiln", modLoc("kiln"));
 
         ModelFile itemGenerated = getExistingFile(mcLoc("item/generated"));
 
