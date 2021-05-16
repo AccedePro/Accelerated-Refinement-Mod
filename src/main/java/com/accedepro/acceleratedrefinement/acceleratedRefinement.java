@@ -19,16 +19,47 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.stream.Collectors;
 
-// The value here should match an entry in the META-INF/mods.toml file
+/*
+*           DISCLAIMER:
+*           IF ANYTHING GOES WRONG, ALTER THE mods.toml FILE UNDER THE META-INF DIRECTORY
+*           IT TENDS TO FIX A LOT OF PROBLEMS
+*           THERE ARE REALLY ONLY A FEW KEY THINGS ON THIS PAGE:
+*
+*           1. MOD_ID VARIABLE AND NAME
+*           2. THE INITIALIZING FUNCTION FOR THE MOD (references the item register)
+*           3. THE PRIMARY EVENTBUSSUBSCRIBER, WHICH CAN BE IGNORED
+*/
+
+// MOD_ID for mod is listed as "accrefined" by linking variable below
+// Classes are defined using camelcase title name "acceleratedRefinement"
+
 @Mod(acceleratedRefinement.MOD_ID)
 public class acceleratedRefinement {
 
+    // Variable defining MOD_ID
+
     public static final String MOD_ID = "accrefined";
+
+
+
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
 
     public acceleratedRefinement() {
+
+        // Line below is the init for the block and item loader
+
         itemReg.registerStuff();
+
+        /*
+        *
+        *
+        *
+        * From here on, I have no clue what 90% of this shit does
+        *
+        *
+        *
+        */
 
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -75,14 +106,17 @@ public class acceleratedRefinement {
         LOGGER.info("HELLO from server starting");
     }
 
-//    // You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
-//    // Event bus for receiving Registry Events)
-//    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
-//    public static class RegistryEvents {
-//        @SubscribeEvent
-//        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
-//            // register a new block here
-//            LOGGER.info("HELLO from Register Block");
-//        }
-//    }
+    // So apparently you can use the below EventBusSubscriber to register events, blocks, items, textures, GUIs, etc
+    // I have instead opted to use seperate java classes
+
+    //    You can use EventBusSubscriber to automatically subscribe events on the contained class (this is subscribing to the MOD
+    //    Event bus for receiving Registry Events)
+    //    @Mod.EventBusSubscriber(bus=Mod.EventBusSubscriber.Bus.MOD)
+    //    public static class RegistryEvents {
+    //        @SubscribeEvent
+    //        public static void onBlocksRegistry(final RegistryEvent.Register<Block> blockRegistryEvent) {
+    //            // register a new block here
+    //            LOGGER.info("HELLO from Register Block");
+    //        }
+    //    }
 }
