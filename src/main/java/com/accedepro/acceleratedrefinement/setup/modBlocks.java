@@ -22,7 +22,7 @@ public class modBlocks {
 
      */
 
-    public static final RegistryObject<Block> CLAY_OVEN = register("clay_oven", () ->
+    public static final RegistryObject<Block> KILN = register("kiln", () ->
             new Block(AbstractBlock.Properties.of(Material.STONE).strength(3).harvestLevel(1).harvestTool(ToolType.PICKAXE).sound(SoundType.ANCIENT_DEBRIS)));
 
     // Simply add more blocks by copying the above and changing stuff to your liking
